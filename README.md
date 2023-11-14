@@ -10,7 +10,8 @@ A bot used to help make life easier.
 
 **Usage**
 
-Sends a HTTP Request to crossref.org and returns basic information.
+Connects to an IRC channel and listens for `!doi <url|DOI>` from a whitelisted user. It will search Crossref for the DOI then create an issue on a GitHub repository with the document title and abstract.
 
-	nrcbot [doi]
+	nrcbot 
 
+Expects a `config.json` file to be located in the same directory.

@@ -178,8 +178,10 @@ type CrossRefWorksDOI struct {
 
 func GetDOI(doi string) (CrossRefWorksDOI, error) {
 	var res CrossRefWorksDOI
+	/* TODO: Set the mailto in config. */
 	err := requests.
 		URL("https://api.crossref.org/").
+		UserAgent("NRCBot/1.0.0 (https://github.com/PMaynard/NRCBot/;mailto:pete@port22.co.uk)").
 		Pathf("/works/%s", doi).
 		ToJSON(&res).
 		Fetch(context.Background())
