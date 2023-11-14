@@ -42,8 +42,8 @@ func run() {
 			}
 
 			res, err := NewGHIssue(GHIssue{
-				Title:  doi.Message.Title[0],
-				Body:   doi.Message.Abstract,
+				Title:  "[Paper]" + doi.Message.Title[0],
+				Body:   doi.Message.Doi + "\n\n" + doi.Message.Abstract,
 				Owner:  "PMaynard",
 				Repo:   "NRCBot",
 				Labels: []string{"Ideas"},
